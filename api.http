@@ -1,2 +1,29 @@
-delete http://localhost:3000/api/v1/tasks/1
-content-type: application/json
+## data create
+#
+# delete http://localhost:3000/api/v1/tasks/1
+# content-type: application/json
+# 
+# {
+#   "title": "title_01",
+#   "description": "description_01"
+# }
+
+## date index
+#
+# get http://localhost:3000/api/v1/tasks
+# content-type: application/json
+
+## data update
+#
+# put http://localhost:3000/api/v1/tasks/1
+# content-type: application/json
+# 
+# {
+#   "description": "description_01-A"
+# }
+
+## data destroy
+#
+# delete http://localhost:3000/api/v1/tasks/1
+# content-type: application/json
+
