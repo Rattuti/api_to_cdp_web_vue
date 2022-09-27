@@ -12,7 +12,7 @@
     <el-row style="margin: 10px 0">
     <el-button type="primary" @click="onSubmit">作成</el-button>
     </el-row>
-    <el-button type="success" @click="getTasks()">task取得</el-button>
+    <el-button type="success" @click="getTasks()" v-show=false>task取得</el-button>
     <el-row :gutter="12">
       <el-col :span="24"  v-for="task in tasks.data" :key="task.id">
         <el-card class="box-card" shadow="hover" style="margin: 5px 0">
@@ -47,6 +47,9 @@ export default {
       tasks: []
     }
   },
+created() {
+    this.getTasks();
+  },
   methods: {
     getTasks() {
       return HTTP.get(URL_DATA,
@@ -71,6 +74,7 @@ export default {
           }
           this.title="";
           this.description="";
+          this.getTasks();
       })
     },
     deleteTask(index){
@@ -83,7 +87,7 @@ export default {
         }        
         this.getTasks();
       })
-    } 
+    }
   }
 }
 </script>
